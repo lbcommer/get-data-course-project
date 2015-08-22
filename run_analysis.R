@@ -73,6 +73,8 @@ colnames(data4)[seq(meanAndStdColumnNames)] <- meanAndStdColumnDescriptiveNames
 # we use dplyr with summarise_each function (http://stackoverflow.com/questions/21644848/summarizing-multiple-columns-with-dplyr)
 data5 <- data4 %>% group_by(subject, activity) %>% summarise_each(funs(mean))
 
+print(data5)
+
 # we can write result into file dataset.txt with:
 # write.table(data5, file="dataset.txt", row.names=FALSE)
 
